@@ -4,9 +4,9 @@ import json
 class DataBase:
     def __init__(self, db_name='data.db'):
         self.connection = sqlite3.connect(db_name, check_same_thread=False)
-        self.create_table()
+        self.__create_table()
 
-    def create_table(self):
+    def __create_table(self):
         with self.connection:
             self.connection.execute('''
                 CREATE TABLE IF NOT EXISTS data (
